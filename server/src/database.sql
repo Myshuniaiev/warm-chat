@@ -1,0 +1,5 @@
+CREATE DATABASE perntodo;
+
+CREATE TABLE posts(
+    id SERIAL PRIMARY KEY,
+);

@@ -1,15 +1,12 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const pool = require("./db.js");
 
-dotenv.config();
+/* Middleware */
+app.use(cors());
+app.use(express.json());
 
-const app: Express = express();
-const port = process.env.PORT;
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
-});
-
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+app.listen(5000, () => {
+  console.log("server has started on port 5000");
 });
